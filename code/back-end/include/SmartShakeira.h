@@ -20,7 +20,6 @@ class SmartShakeira{
 
         // Variaveis dos testes
         int countConfiabiliade = 0;
-        unsigned long leadTime = 0;
 
         // Variaveis do motor
         int pwmA = 3;

@@ -53,7 +53,6 @@ bool SmartShakeira::checkPedido(){
         Serial.println(requisicao);
         // Checa se o saldo é suficiente 
         if(requisicao == 1){
-          leadTime = millis();
           Serial.println("Requisicao do aplicativo");
 
           if (Firebase.RTDB.setInt(&fbdo, "/users/80a9fd301bc2ef2066c6bf4009d0d96b0e37b7e1/Preparar", 0)){
@@ -82,7 +81,6 @@ bool SmartShakeira::checkCadastro(){
       // Pega um valor inteiro do caminho do database test/int 
       if (Firebase.RTDB.getInt(&fbdo, "/users/UserID/Saldo")) {
         if (fbdo.dataType() == "int") {
-          countConfiabiliade++;
           Serial.print("Número de testes: ");
           Serial.println(countConfiabiliade);
           saldo = fbdo.intData();
@@ -130,9 +128,7 @@ void SmartShakeira::makeShake(int speedStep, int stepsPerRevolution, int stepTim
   analogWrite(pwmA, 0);
   digitalWrite(in1A, LOW); 
 	digitalWrite(in2A, LOW); 
-  
-  // Calcula o tempo de operação
-  leadTime = millis() - leadTime;
+
 }
 
 void SmartShakeira::resetValues(){
