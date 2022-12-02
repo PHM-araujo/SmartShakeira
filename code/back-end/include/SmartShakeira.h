@@ -12,6 +12,15 @@ class SmartShakeira{
         // Variáveis dos pedidos
         String strPedido = "";
         int saldo = -1;
+        int requisicao = 0;
+
+        // Variaveis dos testes
+        int countConfiabiliade = 0;
+
+        // Variaveis do motor
+        int pwmA = 3;
+        int in1A = 21;
+        int in2A = 4;
 
     public:
         SmartShakeira();
@@ -33,6 +42,8 @@ class SmartShakeira{
         // . stepsPerRevolution = Passos por revolução 
         // . stepTime = Tempo que o motor fica acionado
         void makeShake(int speedStepp, int stepsPerRevolution, int stepTime);
+
+        void resetValues();
 };
 
 #endif

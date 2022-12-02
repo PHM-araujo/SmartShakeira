@@ -21,6 +21,9 @@ void loop(){
       
       // Prepara o shake
       shakeira.makeShake(15, 2048, 1000);
+
+      // Reseta os valores para uma nova checagem 
+      shakeira.resetValues();
     }
 
   }
