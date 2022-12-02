@@ -1,5 +1,5 @@
-# Smart Shakeira - Código do Back-end 
-- Esse é um projeto que visou a construção orientada a objeto do trabalho proposto na disciplina Integrador. O código foi desenvolvido na plataforma Vscode pela extensão platformio.
+# Trabalho 1 - Código fontes dos testes
+- Visou testar os requisitos de tempo de resposta, confiabilidade e tempo de espera.
 
 ## Pré-requisitos: 
 1. Bibliotecas Utilizadas
