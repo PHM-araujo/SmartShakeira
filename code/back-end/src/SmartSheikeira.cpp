@@ -21,8 +21,8 @@ void SmartShakeira::Wificonnection(const char * WIFI_SSID, const char * WIFI_PAS
 }
 
 void SmartShakeira::Init(){
-  Wificonnection("GalaxyS10", "senha123");
-  setFirebase();
+  //Wificonnection("GalaxyS10", "senha123");
+  //setFirebase();
 
   pinMode(pwmA, OUTPUT);
   pinMode(in1A, OUTPUT);
@@ -119,7 +119,9 @@ void SmartShakeira::makeShake(int speedStep, int stepsPerRevolution, int stepTim
   delay(stepTime);
 
   // Aciona o motor DC pra mexer o shake
-  analogWrite(pwmA, 255);
+  //analogWrite(pwmA, 255);
+
+  //delay(10000);
 }
 
 void SmartShakeira::resetValues(){

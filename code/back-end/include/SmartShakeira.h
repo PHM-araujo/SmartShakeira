@@ -4,10 +4,19 @@
 #include <WiFi.h> 
 #include "Stepper.h"
 
+
+
 class SmartShakeira{
     private:
+
+        int IN1 = 19;
+        int IN2 = 18;
+        int IN3 = 5;
+        int IN4 = 17;
+
         // Variáveis do motor de passo 
         Stepper myStepper = Stepper(2048, 19, 5, 18, 17);
+
 
         // Variáveis dos pedidos
         String strPedido = "";
