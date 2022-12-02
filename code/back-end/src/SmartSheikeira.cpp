@@ -21,16 +21,12 @@ void SmartShakeira::Wificonnection(const char * WIFI_SSID, const char * WIFI_PAS
 }
 
 void SmartShakeira::Init(){
-  //Wificonnection("GalaxyS10", "senha123");
-  //setFirebase();
+  Wificonnection("GalaxyS10", "senha123");
+  setFirebase();
 
   pinMode(pwmA, OUTPUT);
   pinMode(in1A, OUTPUT);
   pinMode(in2A, OUTPUT);
-
-  // Configura o motor pra ir pra frente 
-  digitalWrite(in1A, HIGH);
-  digitalWrite(in2A, LOW);
 }
 
 String SmartShakeira::getPedido(){
@@ -112,16 +108,27 @@ void SmartShakeira::makeShake(int speedStep, int stepsPerRevolution, int stepTim
   // Aciona os motores de passo para abrir comporta
   myStepper.setSpeed(speedStep); 
 
-  myStepper.step(2*stepsPerRevolution);
-  delay(stepTime);
-
+  // Abre comporta
   myStepper.step(-2*stepsPerRevolution);
   delay(stepTime);
 
-  // Aciona o motor DC pra mexer o shake
-  //analogWrite(pwmA, 255);
+  // Fecha comporta
+  myStepper.step(2*stepsPerRevolution);
+  delay(stepTime);
 
-  //delay(10000);
+  // Aciona o motor DC pra mexer o shake
+
+  // Configura o motor pra ir pra frente 
+  digitalWrite(in1A, HIGH);
+  digitalWrite(in2A, LOW);
+
+  analogWrite(pwmA, 255);
+  delay(10000);
+
+  // Para motores
+  analogWrite(pwmA, 0);
+  digitalWrite(in1A, LOW); 
+	digitalWrite(in2A, LOW); 
 }
 
 void SmartShakeira::resetValues(){

@@ -9,6 +9,7 @@ void setup() {
 }
 
 void loop(){
+
   // Checa se há requisição de um pedido 
   if(shakeira.checkPedido()){ 
     
@@ -20,7 +21,7 @@ void loop(){
       Serial.println("Inicia preparo do Shake");
       
       // Prepara o shake
-      shakeira.makeShake(15, 2048, 1000);
+      shakeira.makeShake(15, 2048, 100);
 
       // Reseta os valores para uma nova checagem 
       shakeira.resetValues();
